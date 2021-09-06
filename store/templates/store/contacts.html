@@ -1,0 +1,42 @@
+{% extends 'store/main.html'%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contacts page</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/contacts.css' %}">
+
+
+</head>
+<body background="contacts.jpg">
+
+	
+	<div class="contact-section">
+		<div class="contact-info">
+			<div><i class="fas fa-map-marker-alt"></i> Mezitli, Mersin, Turkey</div>
+			<div><i class="fas fa-envelope"></i> nawshadhnawas@gmail.com</div>
+			<div><i class="fas fa-phone"></i> +90 553 149 1227</div>
+			<div><i class="fas fa-clock"></i> Pzt - Cum 8:00 AM to 5:00 PM</div>
+		</div>
+
+		<div class="contact-form">
+			<h2>Bize Ulaşın</h2>
+			<form class="contact" action="" method="post">
+				 {% csrf_token %}
+				<input type="text" name="name" class="text-box" placeholder="name" required>
+				<input type="email" name="email" class="text-box" placeholder="email" required>
+				<br>
+				<textarea name="message" rows="5" placeholder="message" required></textarea>
+				<input type="submit" name="submit" class="send-btn" value="gönder">
+			</form>
+		</div>
+
+
+
+</body>
+</html>
+
+{% endblock content %}
